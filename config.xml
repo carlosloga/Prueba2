@@ -3,7 +3,7 @@
     xmlns:gap = "http://phonegap.com/ns/1.0" 
     id        = "com.childbrowser.phonegap" 
     version   = "1.0.0">
-<name>ChildBrowser Test App</name>
+<name>Prueba2</name>
 <description>A simple PhoneGap Build application that calls the Childbrowser plugin.</description>
 <author href="https://example.com" email="you@example.com">CLG</author>
 <preference name="phonegap-version" value="2.2.0" />
