@@ -42,7 +42,7 @@
          document.addEventListener("deviceready", function () {
                         alert('device ready');    
 				//window.plugins.childBrowser.showWebPage('http://www.settingconsultoria.cat',{showLocationBar:true}); 
-				alert('voy');
+				navigator.notification.alert('Voy');
 				PDFJS.getDocument('Horari.pdf').then(function(pdf) {
 alert('pillado');  
 // Using promise to fetch the page
