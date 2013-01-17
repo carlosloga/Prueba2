@@ -21,7 +21,7 @@
 <body>
 <div data-role="page" id="page">
   <div data-role="header">
-    <h1>ChildBrowser 3</h1>
+    <h1>ChildBrowser 4</h1>
   </div>
   <div data-role="content">
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage('http://www.google.com',{showLocationBar:true});" data-role="button" data-inline="false">showWebPage. Open Google.com</a></div>
@@ -31,10 +31,11 @@
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">openExternal. Open PDF de AJVILA</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///mnt/sdcard/Download/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">openExternal. de SDCard</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('http://docs.google.com/viewer?url=file:///mnt/sdcard/Download/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">showWebPage+docs.google. Open PDF AjVila</a></div>
+    <canvas id="the-canvas" style="border:1px solid black;"/>
+  </div>  
   <div data-role="footer">
     <h4>Page Footer</h4>
-  </div>
-  <canvas id="the-canvas" style="border:1px solid black;"/>
+  </div>  
 </div>
 <script type="text/javascript">
  $(function () {
