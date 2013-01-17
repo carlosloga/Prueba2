@@ -10,7 +10,7 @@
 //
 // Fetch the PDF document from the URL using promices
 //
-PDFJS.getDocument('mnt/sdcard/Download/Horari.pdf').then(function(pdf) {
+PDFJS.getDocument('/sdcard/Download/Horari.pdf').then(function(pdf) {
 alert('pillado');  
 // Using promise to fetch the page
   pdf.getPage(1).then(function(page) {
