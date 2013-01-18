@@ -96,11 +96,7 @@
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
                 pathToRoot = fileSys.root.fullPath;
                 alert(pathToRoot);
-            }, function() {
-             alert('****iPhone:Error when requesting persisten filesystem to find root path.');
-            });
-
-            fileTransfer.download(
+                fileTransfer.download(
                 uri,
                 pathToRoot + "/" + filePath,
                 function (entry) {
@@ -109,7 +105,11 @@
                 function (error) {
                     alert("download error source " + error.source + "   download error target " + error.target + "  upload error code" + error.code);
                 }
-            );
+              );
+            }, function() {
+             alert('****iPhone:Error when requesting persisten filesystem to find root path.');
+            });
+            
         }
 
 </script>
