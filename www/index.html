@@ -20,7 +20,7 @@
 <body>
 <div data-role="page" id="page">
   <div data-role="header">
-    <h1>ChildBrowser 6</h1>
+    <h1>ChildBrowser 7</h1>
   </div>
   <div data-role="content">
     <div data-role="controlgroup"><a href="#" onclick="bajaPDF();" data-role="button" data-inline="false">bajar FIC</a></div>
@@ -36,7 +36,7 @@
     <label for="txtINI">bajar de </label><input type="text" id="txtINI" name="txtINI" value = "http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/" />
     <label for="txtFIN">guardar en </label><input type="text" id="txtFIN" name="txtFIN" value="file:///Documents/"/>
     <label for="visorPDF">visor iFrame</label><iframe id="visorPDF"></iframe>
-    <label for="the-canvas"></label>visor Canvas<canvas id="the-canvas" style="border:1px solid black;"/>
+    <label for="the-canvas">visor Canvas</label><canvas id="the-canvas" style="border:1px solid black;"/>
   </div>  
   <div data-role="footer">
     <h4>Page Footer</h4>
@@ -62,7 +62,7 @@ alert('pillado');
         document.addEventListener("deviceready", function () {
             var filePath = $('#txtFIN').val();
             alert('device ready');
-            //				PDFJS.getDocument('Horari.pdf').then(function (pdf) {   <-- Así funciona OK 
+            //				PDFJS.getDocument('Horari.pdf').then(function (pdf) {   <-- Asï¿½ funciona OK 
             PDFJS.getDocument(filePath).then(function (pdf) {
                 alert('pillado');
                 // Using promise to fetch the page
