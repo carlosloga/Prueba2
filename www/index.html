@@ -92,6 +92,14 @@
             var uri = encodeURI($('#txtINI').val());
             var filePath = $('#txtFIN').val();
 
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
+               var pathToRoot = fileSys.root.fullPath;
+               alert(pathToRoot);
+                filePath = pathToRoot + filePath;
+            }, function() {
+             alert('****iPhone:Error when requesting persisten filesystem to find root path.');
+            });
+
             fileTransfer.download(
                 uri,
                 filePath,
