@@ -23,20 +23,27 @@
     <h1>ChildBrowser 6</h1>
   </div>
   <div data-role="content">
+    <div data-role="controlgroup"><a href="#" onclick="bajaPDF();" data-role="button" data-inline="false">bajar FIC</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage('http://www.google.com',{showLocationBar:true});" data-role="button" data-inline="false">showWebPage. Open Google.com</a></div>
-    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('file:///mnt/sdcard/Download/a1.jpg'),{showLocationBar:true});" data-role="button" data-inline="false">showWebPage. Open PDF SDCard</a></div>
+    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('file:///mnt/sdcard/Download/a1.jpg'),{showLocationBar:true});" data-role="button" data-inline="false">AND.showWebPage. Open PDF SDCard</a></div>
+    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('file:///Documents/a1.jpg'),{showLocationBar:true});" data-role="button" data-inline="false">iOS.showWebPage. Open PDF Documents</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">showWebPage. Open PDF AjVila</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('http://docs.google.com/viewer?url=http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">showWebPage+docs.google. Open PDF AjVila</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">openExternal. Open PDF de AJVILA</a></div>
-    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///mnt/sdcard/Download/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">openExternal. de SDCard</a></div>
-    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('http://docs.google.com/viewer?url=file:///mnt/sdcard/Download/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">showWebPage+docs.google. Open PDF AjVila</a></div>
-    <canvas id="the-canvas" style="border:1px solid black;"/>
+    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///mnt/sdcard/Download/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">AND.openExternal. de SDCard</a></div>
+    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///Documents/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">iOS.openExternal. de Documents</a></div>
+
+    <label for="txtINI">bajar de </label><input type="text" id="txtINI" name="txtINI" value = "http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/" />
+    <label for="txtFIN">guardar en </label><input type="text" id="txtFIN" name="txtFIN" value="file:///Documents/"/>
+    <label for="visorPDF">visor iFrame</label><iframe id="visorPDF"></iframe>
+    <label for="the-canvas"></label>visor Canvas<canvas id="the-canvas" style="border:1px solid black;"/>
   </div>  
   <div data-role="footer">
     <h4>Page Footer</h4>
   </div>  
 </div>
 <script type="text/javascript">
+<<<<<<< HEAD
  $(function () {
          alert('load');
          document.addEventListener("deviceready", function () {
@@ -49,28 +56,71 @@ alert('pillado');
   pdf.getPage(1).then(function(page) {
     var scale = 1.5;
     var viewport = page.getViewport(scale);
+=======
+    $(function () {
+        alert('load');
+        document.addEventListener("deviceready", function () {
+            var filePath = $('#txtFIN').val();
+            alert('device ready');
+            //				PDFJS.getDocument('Horari.pdf').then(function (pdf) {   <-- Así funciona OK 
+            PDFJS.getDocument(filePath).then(function (pdf) {
+                alert('pillado');
+                // Using promise to fetch the page
+                pdf.getPage(1).then(function (page) {
+                    var scale = 1.5;
+                    var viewport = page.getViewport(scale);
 
-    //
-    // Prepare canvas using PDF page dimensions
-    //
-    var canvas = document.getElementById('the-canvas');
-    var context = canvas.getContext('2d');
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
+                    //
+                    // Prepare canvas using PDF page dimensions
+                    //
+                    var canvas = document.getElementById('the-canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
 
-    //
-    // Render PDF page into canvas context
-    //
-    var renderContext = {
-      canvasContext: context,
-      viewport: viewport
-    };
-    page.render(renderContext);
-  });
-});
+                    //
+                    // Render PDF page into canvas context
+                    //
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext);
+                });
+            });
 
-         });
-} ());
+        });
+
+        function verEnFrame() {
+            alert('en el frame ?');
+            var filePath = $('#txtFIN').val();
+            $('#visorPDF').attr("src", filePath);
+            //$('#visorPDF').contents().find('html').html(filePath);
+
+            alert("ahora : window.plugins.childBrowser.openExternal(" + filePath + ");");
+            window.plugins.childBrowser.openExternal(filePath);
+        }
+>>>>>>> y
+
+        function bajaPDF() {
+            alert('bajar Fic');
+            var fileTransfer = new FileTransfer();
+            var uri = encodeURI($('#txtINI').val());
+            var filePath = $('#txtFIN').val();
+
+            fileTransfer.download(
+                uri,
+                filePath,
+                function (entry) {
+                    alert("download complete: \n" + entry.fullPath);
+                },
+                function (error) {
+                    alert("download error source " + error.source + "   download error target " + error.target + "  upload error code" + error.code);
+                }
+            );
+        }
+
+    } ());
 </script>
 </body>
 </html>
