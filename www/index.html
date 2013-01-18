@@ -33,6 +33,8 @@
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///mnt/sdcard/Download/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">AND.openExternal. de SDCard</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///Documents/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">iOS.openExternal. de Documents</a></div>
     <div data-role="controlgroup"><a href="#" onclick="verEnFrame();" data-role="button" data-inline="false">ver en Frame</a></div>
+    <div data-role="controlgroup"><a href="#" onclick="verEnCanvas();" data-role="button" data-inline="false">ver en Canvas</a></div>
+    
     <label for="txtINI">bajar de </label><input type="text" id="txtINI" name="txtINI" value = "http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/" />
     <label for="txtFIN">guardar en </label><input type="text" id="txtFIN" name="txtFIN" value="file:///Documents/"/>
     <label for="visorPDF">visor iFrame</label><iframe id="visorPDF"></iframe>
@@ -48,6 +50,12 @@
         document.addEventListener("deviceready", function () {
             var filePath = $('#txtFIN').val();
             alert('device ready');
+    	  }());
+        });
+
+        function verEnCanvas(){
+           var filePath = $('#txtFIN').val();
+            alert('ver en Canvas');
             PDFJS.getDocument(filePath).then(function (pdf) {
                 alert('pillado');
                 // Using promise to fetch the page
@@ -73,8 +81,7 @@
                     page.render(renderContext);
                 });
             });
-    	  }());
-        });
+        }
 
         function verEnFrame() {
             alert('en el frame ?');
