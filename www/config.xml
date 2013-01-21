@@ -7,25 +7,7 @@
 <description>A simple PhoneGap Build application that calls the Childbrowser plugin.</description>
 <author href="https://example.com" email="you@example.com">CLG</author>
 <preference name="phonegap-version" value="2.2.0" />
-  <preference name="fullscreen" value="true" />
-  <preference name="orientation" value="default" />
-  <preference name="target-device" value="universal" />
-  <preference name="webviewbounce" value="true" />
-  <preference name="prerendered-icon" value="true" />
-  <preference name="stay-in-webview" value="false" />
-  <preference name="detect-data-types" value="true" />
-  <preference name="exit-on-suspend" value="true" />
-  <preference name="show-splash-screen-spinner" value="false" />
-  <preference name="auto-hide-splash-screen" value="true" />
-  <feature name="http://api.phonegap.com/1.0/battery"/>
-  <feature name="http://api.phonegap.com/1.0/camera"/>
-  <feature name="http://api.phonegap.com/1.0/contacts"/>
-  <feature name="http://api.phonegap.com/1.0/file"/>
-  <feature name="http://api.phonegap.com/1.0/geolocation"/>
-  <feature name="http://api.phonegap.com/1.0/media"/>
-  <feature name="http://api.phonegap.com/1.0/network"/>
-  <feature name="http://api.phonegap.com/1.0/notification"/>
+<plugin name="Notification" value="CDVNotification" />
 <feature name="http://plugins.phonegap.com/ChildBrowser/3.0.4" /> 
 <access origin="*" />
-<plugin name="Notification" value="CDVNotification" />
 </widget>
