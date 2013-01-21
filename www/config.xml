@@ -27,5 +27,4 @@
   <feature name="http://api.phonegap.com/1.0/notification"/>
 <feature name="http://plugins.phonegap.com/ChildBrowser/3.0.4" /> 
 <access origin="*" />
-<plugin name="Notification" value="CDVNotification" />
 </widget>
