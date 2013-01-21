@@ -24,23 +24,23 @@
   </div>
   <div data-role="content">
     <div data-role="controlgroup"><a href="#" onclick="bajaPDF();" data-role="button" data-inline="false">bajar FIC</a></div>
-    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage('http://www.google.com',{showLocationBar:true});" data-role="button" data-inline="false">showWebPage. Open Google.com</a></div>
+    <!-- <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage('http://www.google.com',{showLocationBar:true});" data-role="button" data-inline="false">showWebPage. Open Google.com</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('file:///mnt/sdcard/Download/a1.jpg'),{showLocationBar:true});" data-role="button" data-inline="false">AND.showWebPage. Open PDF SDCard</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('file:///Documents/a1.jpg'),{showLocationBar:true});" data-role="button" data-inline="false">iOS.showWebPage. Open PDF Documents</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">showWebPage. Open PDF AjVila</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.showWebPage(encodeURI('http://docs.google.com/viewer?url=http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">showWebPage+docs.google. Open PDF AjVila</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">openExternal. Open PDF de AJVILA</a></div>
     <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///mnt/sdcard/Download/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">AND.openExternal. de SDCard</a></div>
-    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///Documents/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">iOS.openExternal. de Documents</a></div>
+    <div data-role="controlgroup"><a href="#" onclick="window.plugins.childBrowser.openExternal(encodeURI('file:///Documents/Horari.pdf'),{showLocationBar:true});" data-role="button" data-inline="false">iOS.openExternal. de Documents</a></div> -->
     <div data-role="controlgroup"><a href="#" onclick="verEnFrame();" data-role="button" data-inline="false">ver en Frame</a></div>
-    <div data-role="controlgroup"><a href="#" onclick="verEnCanvas();" data-role="button" data-inline="false">ver en Canvas</a></div>    
+    <!-- <div data-role="controlgroup"><a href="#" onclick="verEnCanvas();" data-role="button" data-inline="false">ver en Canvas</a></div> -->
     <div data-role="controlgroup"><a href="#" onclick="verCBshow();" data-role="button" data-inline="false">ver en CB show</a></div>
-    <div data-role="controlgroup"><a href="#" onclick="verCBexternal();" data-role="button" data-inline="false">ver en CB external</a></div>
+    <!-- <div data-role="controlgroup"><a href="#" onclick="verCBexternal();" data-role="button" data-inline="false">ver en CB external</a></div> -->
     
     <label for="txtINI">bajar de </label><input type="text" id="txtINI" name="txtINI" value = "http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/" />
     <label for="txtFIN">guardar en </label><input type="text" id="txtFIN" name="txtFIN" value="file:///Documents/"/>
-    <label for="visorPDF">visor iFrame</label><iframe id="visorPDF"></iframe>
-    <label for="the-canvas">visor Canvas</label><canvas id="the-canvas" style="border:1px solid black;"/>
+    <iframe id="visorPDF" width="800" height="400"></iframe>
+    <!-- <label for="the-canvas">visor Canvas</label><canvas id="the-canvas" style="border:1px solid black;"/> -->
   </div>  
   <div data-role="footer">
     <h4>Page Footer</h4>
@@ -55,6 +55,7 @@
     	  }());
         });
 
+/* 
         function verEnCanvas(){
            var filePath = $('#txtFIN').val();
             alert('ver en Canvas');
@@ -84,6 +85,7 @@
                 });
             });
         }
+*/
 
         function verEnFrame() {
             alert('en el frame ');
