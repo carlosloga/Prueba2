@@ -58,14 +58,8 @@
     	  }());
         });
 
-    function showAlert() {
-        navigator.notification=new Notification(); 
-        navigator.notification.alert(
-            'You are the winner!',  // message
-            null,
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
+    function showAlert() { 
+        navigator.notification.alert('PhoneGap Alert', null, 'Title', 'Button')
     }
 
     // Beep three times
