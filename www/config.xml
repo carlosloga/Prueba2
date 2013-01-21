@@ -6,7 +6,7 @@
 <name>Prueba2</name>
 <description>A simple PhoneGap Build application that calls the Childbrowser plugin.</description>
 <author href="https://example.com" email="you@example.com">CLG</author>
-<preference name="phonegap-version" value="2.3.0" />
+<preference name="phonegap-version" value="2.2.0" />
 <feature name="http://plugins.phonegap.com/ChildBrowser/3.0.4" /> 
 <access origin="*" />
 </widget>
