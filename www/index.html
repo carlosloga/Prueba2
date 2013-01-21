@@ -35,7 +35,10 @@
     <div data-role="controlgroup"><a href="#" onclick="verEnFrame();" data-role="button" data-inline="false">ver en Frame</a></div>
     <!-- <div data-role="controlgroup"><a href="#" onclick="verEnCanvas();" data-role="button" data-inline="false">ver en Canvas</a></div> -->
     <div data-role="controlgroup"><a href="#" onclick="verCBshow();" data-role="button" data-inline="false">ver en CB show</a></div>
-    <!-- <div data-role="controlgroup"><a href="#" onclick="verCBexternal();" data-role="button" data-inline="false">ver en CB external</a></div> -->
+    <!-- <div data-role="controlgroup"><a href="#" onclick="verCBexternal();" data-role="button" data-inline="false">ver en CB external</a></div> -->    
+    <div data-role="controlgroup"><a href="#" onclick="showAlert();" data-role="button" data-inline="false">showAlert</a></div>    
+    <div data-role="controlgroup"><a href="#" onclick="playBeep();" data-role="button" data-inline="false">playBeep</a></div>        
+    <div data-role="controlgroup"><a href="#" onclick="vibrate();" data-role="button" data-inline="false">vibrate</a></div>    
     
     <label for="txtINI">bajar de </label><input type="text" id="txtINI" name="txtINI" value = "http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/" />
     <label for="txtFIN">guardar en </label><input type="text" id="txtFIN" name="txtFIN" value="file:///Documents/"/>
@@ -54,6 +57,26 @@
             alert('device ready');
     	  }());
         });
+
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+    // Beep three times
+    //
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibrate for 2 seconds
+    //
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
 
 /* 
         function verEnCanvas(){
