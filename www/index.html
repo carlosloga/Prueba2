@@ -42,7 +42,7 @@
     <div data-role="controlgroup"><a href="#" onclick="vibrate();" data-role="button" data-inline="false">vibrate</a></div>    
     
     <label for="txtINI">bajar de </label><input type="text" id="txtINI" name="txtINI" value = "http://213.27.242.251:8000/AJVILA/Archivos/FOTOS/" />
-    <label for="txtFIN">guardar en </label><input type="text" id="txtFIN" name="txtFIN" value="file:///Documents/"/>
+    <label for="txtFIN">guardar como </label><input type="text" id="txtFIN" name="txtFIN" value=""/>
     <iframe id="visorPDF" style="overflow:visible;  width:350px; height: 200px;"></iframe>
     <!-- <label for="the-canvas">visor Canvas</label><canvas id="the-canvas" style="border:1px solid black;"/> -->
   </div>  
@@ -158,10 +158,10 @@
                     alert("download Error. source " + error.source + "\n  target " + error.target + "\nerror code" + error.code);
                 }
               );
-            }, function() {
-             alert('Error when requesting persisten filesystem to find root path.');
             });
-            
+            //, function() {
+            // alert('Error when requesting persisten filesystem to find root path.');
+            //});            
         }
 
 </script>
