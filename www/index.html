@@ -66,13 +66,13 @@
     // Beep three times
     //
     function playBeep() {
-        navigator.notification.beep(3);
+        navigator.notification.beep(1);
     }
 
     // Vibrate for 2 seconds
     //
     function vibrate() {
-        navigator.notification.vibrate(2000);
+        navigator.notification.vibrate(1000);
     }
 
 /* 
@@ -155,6 +155,7 @@
                     alert("download complete: \n" + entry.fullPath);
                 },
                 function (error) {
+                    alert('la ruta es :' + pathToRoot + '/' + filePath);
                     alert("download Error. source " + error.source + "\n  target " + error.target + "\nerror code" + error.code);
                 }
               );
