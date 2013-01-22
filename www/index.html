@@ -143,14 +143,17 @@
             var fileTransfer = new FileTransfer();
             var uri = encodeURI($('#txtINI').val());
             var filePath = $('#txtFIN').val();
-            var pathToRoot = "";
+            var pathToRoot = '';
             
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
                 pathToRoot = fileSys.root.fullPath;
-                alert(pathToRoot);
-                fileTransfer.download(
+            });
+            
+            alert(pathToRoot + '/' + filePath);
+            
+            fileTransfer.download(
                 uri,
-                pathToRoot + "/" + filePath,
+                pathToRoot + '/' + filePath,
                 function (entry) {
                     alert("download complete: \n" + entry.fullPath);
                 },
@@ -159,7 +162,7 @@
                     alert("download Error. source " + error.source + "\n  target " + error.target + "\nerror code" + error.code);
                 }
               );
-            });
+              
             //, function() {
             // alert('Error when requesting persisten filesystem to find root path.');
             //});            
