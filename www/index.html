@@ -149,16 +149,16 @@
                 pathToRoot = fileSys.root.fullPath;
             });
             
-            alert(pathToRoot + '/' + filePath);
+            var destino = pathToRoot + '/' + filePath;
+            alert('origen : ' + uri + '\ndestino : ' + destino);
             
             fileTransfer.download(
                 uri,
-                pathToRoot + '/' + filePath,
+                destino,
                 function (entry) {
                     alert("download complete: \n" + entry.fullPath);
                 },
                 function (error) {
-                    alert('la ruta es :' + pathToRoot + '/' + filePath);
                     alert("download Error. source " + error.source + "\n  target " + error.target + "\nerror code" + error.code);
                 }
               );
